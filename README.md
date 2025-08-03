@@ -28,7 +28,7 @@ with the current projects I don't have the time. I have a book on that too thoug
 
 ---
 
-### Project Layout so far:
+### Project Layout so far (Basic):
  - [x] FastAPI backend
  - [ ] MCP server (Kinda not working so far, client_session problem)
  - [x] Ollama Llama3 offline AI (Offline)
@@ -36,9 +36,23 @@ with the current projects I don't have the time. I have a book on that too thoug
    - [ ] Discover devices
    - [ ] Connection
    - [ ] Generate dashboards/reports
- - [ ] Client GUI app
+ - [x] Client GUI app
  - [ ] DASH report page?
  - [ ] Simulation
+
+---
+
+### Progress:
+I have a rudimentary FastAPI backend that hooks up with a local run AI. There
+is an issue with MCP server where client_session is not forwarded to the MCP
+from the backend, so now it just a simple prompt and response.
+
+I've made a very simple GUI app so far, it's basically just boilerplate and
+basic layout stuff so far. I haven't worked much with PySide6 before, mostly
+Tkinter and CustomTkinter, so there's a learning experience there.
+
+I'm trying to keep the source code in such a way that it will be "easy" to
+build on it, so I try to keep it as modular as possible.
 
 ---
 
