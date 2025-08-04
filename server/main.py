@@ -7,6 +7,7 @@ from fastapi.responses import JSONResponse
 from server.mcp_instances import mcp
 import server.agents.scanner_tool as scanner
 import server.agents.ollama_agent as ollama
+from server.agents.tools import router
 
 
 @asynccontextmanager
@@ -19,6 +20,7 @@ async def lifespan(_app: FastAPI):
 
 
 app = FastAPI(title="Atlas MCP Backend", lifespan=lifespan)
+app.include_router(router)
 
 
 @app.get('/')
@@ -26,7 +28,7 @@ async def root():
     return {'status': 'Atlas MCP backend is live.'}
 
 
-@app.get('/_scan')  # TODO: Does not wor. Problem with client_session()
+@app.get('/_scan')  # TODO: Does not work. Problem with client_session()
 async def scan_devices():
     try:
         result = await scanner.scan_network()

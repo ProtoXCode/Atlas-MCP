@@ -7,3 +7,5 @@ pytest
 pytest-asyncio
 PySide6
 qt_material
+netifaces
+getmac
